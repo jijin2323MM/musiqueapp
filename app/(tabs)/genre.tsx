@@ -20,14 +20,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Page discover</ThemedText>
-        <ThemedView>
-        <ThemedText type="subtitle">        
-        <HelloWave/><Link href="/foryou">For you</Link></ThemedText>
-        <ThemedText type="subtitle">
-        <HelloWave/>
-        <Link href="/genre">Genre</Link></ThemedText>
-        </ThemedView>
+        <ThemedText type="title">Page for you</ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
