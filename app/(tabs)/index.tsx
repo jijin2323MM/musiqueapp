@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, TextInput, TouchableOpacity, Text, FlatList, Alert, ScrollView, Modal } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -7,28 +7,28 @@ import { ThemedView } from '@/components/ThemedView';
 
 import { Link } from 'expo-router';
 import { View } from 'react-native';
+import { useState } from 'react';
+import ResearchBar from '@/components/ResearchBar';
+import ToggleMenu from '@/components/ToggleMenu';
 
 
 export default function HomeScreen() {
+
+
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
+      headerBackgroundColor={{ light: '#D9D9D9', dark: '#D9D9D9' }}
       headerImage={
         <Image
           source={require('@/assets/images/partial-react-logo.png')}
           style={styles.reactLogo}
         />
       }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Page discover</ThemedText>
-        <ThemedView>
-        <ThemedText type="subtitle">        
-        <HelloWave/><Link href="/foryou">For you</Link></ThemedText>
-        <ThemedText type="subtitle">
-        <HelloWave/>
-        <Link href="/genre">Genre</Link></ThemedText>
-        </ThemedView>
-      </ThemedView>
+      <ResearchBar/>
+
+      <ToggleMenu/>
+      
+
     </ParallaxScrollView>
   );
 }
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 8,
   },
+  
   reactLogo: {
     height: 178,
     width: 290,
@@ -50,4 +51,5 @@ const styles = StyleSheet.create({
     left: 0,
     position: 'absolute',
   },
+  
 });

@@ -20,7 +20,7 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Page for you</ThemedText>
+        <ThemedText type="title">Page genre</ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
