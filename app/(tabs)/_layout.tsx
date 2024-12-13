@@ -41,12 +41,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profil"
+        name="abonnement"
         options={{
-          title: 'Profil',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="person" color={color} />,
+          title: 'abonnement',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="tv" color={color} />,
         }}
       />
+      <Tabs.Screen
+      name="profil"
+      options={{
+        title: 'Profil',
+        tabBarIcon: ({ color }) => <IconSymbol size={28} name="person" color={color} />,
+      }}
+    />
       
     </Tabs>
   );

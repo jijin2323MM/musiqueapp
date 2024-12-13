@@ -4,6 +4,8 @@ import ToggleButton from './ToggleButton';
 import GenreList from './GenreList';
 import ItemList from './ItemList';
 import ItemModal from './ItemModal';
+import RecoList from './RecoList';
+import ArtistList from './ArtistList';
 
 export default function ToggleMenu() {
     interface Item {
@@ -12,7 +14,7 @@ export default function ToggleMenu() {
         description: string;
         image: string;
       }
-  const [activeToggle, setActiveToggle] = useState('For You');
+  const [activeToggle, setActiveToggle] = useState('Recogenre');
   const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
   return (
@@ -20,22 +22,23 @@ export default function ToggleMenu() {
       {/*Boutons pour choisir entre les deux vues */}
       <View style={styles.toggleButtonsContainer}>
         <ToggleButton
-          label="For You"
-          isActive={activeToggle === 'For You'}
-          onPress={() => setActiveToggle('For You')}
+          label="Recogenre"
+          isActive={activeToggle === 'Recogenre'}
+          onPress={() => setActiveToggle('Recogenre')}
         />
         <ToggleButton
-          label="Genre"
-          isActive={activeToggle === 'Genre'}
-          onPress={() => setActiveToggle('Genre')}
+          label="Recoartiste"
+          isActive={activeToggle === 'Recoartiste'}
+          onPress={() => setActiveToggle('Recoartiste')}
         />
       </View>
 
       {/* Affichage conditionnel en fonction du toggle actif */}
-      {activeToggle === 'For You' ? (
-        <ItemList onItemPress={(item) => setSelectedItem(item)} />
+      {activeToggle === 'Recogenre' ? (
+        // <ItemList onItemPress={(item) => setSelectedItem(item)} />
+        <RecoList/>
       ) : (
-        <GenreList />
+        <ArtistList />
       )}
 
       {/* Modal pour afficher les détails de l'élément sélectionné */}

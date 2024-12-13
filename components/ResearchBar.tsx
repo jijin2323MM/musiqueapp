@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 export default function ResearchBar() {
     const [searchText, setSearchText] = useState('');
@@ -11,7 +11,7 @@ export default function ResearchBar() {
 <View style={styles.searchContainer}>
     <TextInput
     style={styles.searchBar}
-    placeholder="Search..."
+    placeholder="recherche ton artiste..."
     value={searchText}
     onChangeText={setSearchText}
     />
