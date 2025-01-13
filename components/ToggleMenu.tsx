@@ -6,6 +6,7 @@ import ItemList from './ItemList';
 import ItemModal from './ItemModal';
 import RecoList from './RecoList';
 import ArtistList from './ArtistList';
+import {  Chip } from 'react-native-paper';
 
 export default function ToggleMenu() {
     interface Item {
@@ -21,16 +22,9 @@ export default function ToggleMenu() {
     <View style={styles.container}>
       {/*Boutons pour choisir entre les deux vues */}
       <View style={styles.toggleButtonsContainer}>
-        <ToggleButton
-          label="Recogenre"
-          isActive={activeToggle === 'Recogenre'}
-          onPress={() => setActiveToggle('Recogenre')}
-        />
-        <ToggleButton
-          label="Recoartiste"
-          isActive={activeToggle === 'Recoartiste'}
-          onPress={() => setActiveToggle('Recoartiste')}
-        />
+      <Chip icon="information" onPress={() => setActiveToggle('Recogenre')}>Playlists</Chip>
+    <Chip icon="information" onPress={() => setActiveToggle('Recoartiste')}>Artiste</Chip>
+
       </View>
 
       {/* Affichage conditionnel en fonction du toggle actif */}

@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { ScrollView, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { Card } from 'react-native-paper';
+import CardContent from 'react-native-paper/lib/typescript/components/Card/CardContent';
 
 
 
@@ -10,7 +12,7 @@ const RecoList = () => {
 
  const videos = [rap1,rap2,rap3]
  const genres = [
-  'Rap', 'Rock', 'Hip-Hop'
+  'For you', 'Rock', 'Hip-Hop'
 ];
   return(
   <ScrollView style={styles.genreListContainer}>

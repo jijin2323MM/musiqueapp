@@ -1,6 +1,7 @@
 import { Link } from 'expo-router';
 import React from 'react';
 import { ScrollView, TouchableOpacity, Text, StyleSheet, Image, Linking, View } from 'react-native';
+import { Avatar } from 'react-native-paper';
 
 
 
@@ -13,10 +14,11 @@ const ArtistList = () => (
     {genres.map((genre, index) => (
       <View key={index} style={styles.genreListItem}>
         <Link href ='/ProfilArtist'>
-        <Image
+        <Avatar.Image size={200} source={profil} />
+        {/* <Image
           source={profil}
           style={styles.image}
-        />
+        /> */}
         <Text style={styles.genreListItemText}>{genre}</Text>
         </Link>
       </View>

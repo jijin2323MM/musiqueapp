@@ -29,7 +29,7 @@ const ItemModal: React.FC<ItemModalProps> = ({ item, onClose }) => {
       <View style={styles.modalContent}>
         {/* Section Avatar + Titre côte à côte */}            
         <View style={styles.headerContainer}>
-            <Link href ='/ItemDetails'>
+            <Link href ='/ProfilArtist'>
           <Image source={{ uri: item.image }} style={styles.modalAvatar} />
           <Text style={styles.modalTitle}>{item.title}</Text>
           </Link>

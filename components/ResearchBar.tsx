@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Alert, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Searchbar, Chip } from 'react-native-paper';
 
 export default function ResearchBar() {
+    const [searchQuery, setSearchQuery] = React.useState('');
     const [searchText, setSearchText] = useState('');
     const handleValidate = () => {
         Alert.alert('Validation', `Vous avez entré : ${searchText}`);
@@ -9,18 +11,23 @@ export default function ResearchBar() {
 
   return (
 <View style={styles.searchContainer}>
-    <TextInput
+    <Searchbar
+        placeholder="Recherche artiste.."
+        onChangeText={setSearchQuery}
+        value={searchQuery}
+        />
+    {/* <TextInput
     style={styles.searchBar}
     placeholder="recherche ton artiste..."
     value={searchText}
     onChangeText={setSearchText}
-    />
-    <TouchableOpacity
+    /> */}
+    {/* <TouchableOpacity
     style={styles.validateButton}
     onPress={() => alert(`Vous avez entré : ${searchText}`)}
     >
     <Text style={styles.validateButtonText}>Valider</Text>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
     </View>  )}
 
 const styles = StyleSheet.create({

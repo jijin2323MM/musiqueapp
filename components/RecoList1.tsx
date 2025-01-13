@@ -10,17 +10,18 @@ const Reco1List = () => {
  
   const videos = [rap1,rap2,rap3]
  const genres = [
-  'Mes super titres'
+  'Découvrir Soulax', '"Je cherche une alternance"', '"Move your body"'
 ];
-const artists = ['laura']
+const artists = ['Salade', 'Soulé', "Silex", 'Stylax', 'Xanax']
 const artist1 = require('../assets/images/artist1.jpeg')
 const profil = require('../assets/images/profil1.jpeg');
 
   return(
   <ScrollView style={styles.genreListContainer}>
     {genres.map((genre, index) => (
+      <><Text style={styles.genreListItemText}>{genre}</Text>
   <ScrollView key = {index} style={styles.genreListContainer} horizontal = {true}>
-    <Text style={styles.genreListItemText}>{genre}</Text>
+    
     {videos.map((video, index1) => (
       <TouchableOpacity key={index1} style={styles.genreListItem} onPress={() => alert(`Vous avez sélectionné : ${video}`)}>
         <video controls width="250" height="200">
@@ -30,8 +31,9 @@ const profil = require('../assets/images/profil1.jpeg');
       ))
     }
   </ScrollView>
+  </>
   ))}
-  <Text>Mes recos</Text>
+  <Text>Les recos de Soulax</Text>
           <ScrollView style={styles.genreListContainer} horizontal = {true}>
             {artists.map((video, index1) => (
               <TouchableOpacity key={index1}  onPress={() => alert(`Vous avez sélectionné : ${video}`)}>
@@ -39,7 +41,7 @@ const profil = require('../assets/images/profil1.jpeg');
           source={artist1}
           style={styles.avatar1} 
       />
-      <Text>art_laurab</Text>
+      <Text>{video}</Text>
       </TouchableOpacity>))
       
       }
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 8,
     padding: 10,
-    height: 200,
+    // height: 200,
     borderWidth: 1,
     borderColor: '#ddd',
   }, 
